@@ -1,0 +1,135 @@
+/* ==========================================================================
+   1. VARIABLES & THÈMES (Design System) - AfriConnect Summit 2026
+   ========================================================================== */
+:root {
+    /* Polices obligatoires (Expressive pour titres, Lisible pour le corps) */
+    --font-title: 'Space Grotesk', 'Montserrat', sans-serif;
+    --font-body: 'Inter', 'Roboto', sans-serif;
+    
+    /* Espacements, Bordures & Transitions */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --transition-smooth: all 0.3s ease-in-out;
+    --container-width: 1200px;
+
+    /* Palette Light Mode (Inspirée de ta palette de couleurs) */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f4f7fe;        
+    --text-primary: #1e293b;        
+    --text-secondary: #64748b;      
+    
+    /* Nuances extraites de ton dégradé */
+    --brand-primary: #8090ff;       /* Bleu-violet (gauche de la palette) */
+    --brand-secondary: #63b5e5;     /* Bleu-cyan (milieu de la palette) */
+    --accent-color: #55e2c4;        /* Turquoise/Menthe vif (droite de la palette) */
+    --accent-hover: #40cbb1;        
+    
+    --border-color: #e2e8f0;
+    --shadow-color: rgba(128, 144, 255, 0.15);
+}
+
+/* Configuration anticipée du Thème Sombre via l'attribut [data-theme="dark"] */
+[data-theme="dark"] {
+    --bg-primary: #0b0f19;          
+    --bg-secondary: #151b2c;        
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    
+    --brand-primary: #9aa7ff;       
+    --brand-secondary: #7ecbf5;
+    --accent-color: #50f2b0;        /* Plus lumineux en mode sombre pour le contraste */
+    --accent-hover: #55e2c4;
+    
+    --border-color: #242f47;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================================================
+   2. STYLES DE BASE & RESET GLOBAL
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Requis pour le bouton retour en haut fluide */
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: var(--transition-smooth); /* Permet une transition fluide lors du switch de thème */
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-title);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Conteneur global centré */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ==========================================================================
+   3. COMPOSANTS DE BOUTONS INTERACTIFS (Avec transitions)
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: var(--radius-md);
+    font-family: var(--font-title);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: #0b0f19; /* Évite le texte blanc sur fond menthe trop clair */
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px); /* Effet d'élévation moderne au survol */
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--brand-primary);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--brand-primary);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
