@@ -133,3 +133,444 @@ img {
     color: #ffffff;
     transform: translateY(-2px);
 }
+/* ==========================================================================
+   4. NAVIGATION (NAVBAR), HERO & COMPTE À REBOURS
+   ========================================================================== */
+header, .navbar-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent; /* Transparente par défaut tout en haut */
+    transition: var(--transition-smooth);
+    border-bottom: 1px solid transparent;
+}
+
+/* Quand on défile, on applique le flou et un fond semi-transparent */
+header.scrolled, .navbar-header.scrolled {
+    background-color: rgba(11, 15, 25, 0.7); /* Fond sombre mais transparent (ajuste selon ton thème) */
+    backdrop-filter: blur(10px); /* Effet flouté moderne */
+    -webkit-backdrop-filter: blur(10px); /* Version pour Safari */
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 1.3rem;
+    background: linear-gradient(135deg, var(--brand-primary), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--text-secondary);
+    position: relative;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-primary);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: var(--transition-smooth);
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#theme-toggle, .hamburger {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: var(--transition-smooth);
+}
+
+.hamburger {
+    display: none; /* Masqué sur PC */
+}
+
+/* --- Section Hero & Countdown --- */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at 80% 20%, var(--shadow-color), transparent 45%), var(--bg-secondary);
+    padding-top: 100px;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    min-width: 100px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.countdown-item span {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    display: block;
+}
+
+/* ==========================================================================
+   5. GRILLES ET SECTIONS RESPONSIVES (Grid & Flexbox)
+   ========================================================================== */
+.section-padding {
+    padding: 6rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+}
+
+/* --- Chiffres clés (Grid 4x1 -> 1x1) --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.stat-card {
+    background: var(--bg-secondary);
+    padding: 2.5rem 1.5rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+    border-bottom: 4px solid var(--brand-primary);
+}
+
+.stat-number {
+    font-family: var(--font-title);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: block;
+}
+
+/* --- Pourquoi Participer (Flexbox standard) --- */
+.why-flex {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.why-card {
+    flex: 1;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    padding: 2.5rem;
+    border-radius: var(--radius-md);
+    transition: var(--transition-smooth);
+}
+
+.why-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px var(--shadow-color);
+}
+
+.why-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+/* --- Sponsors & Footer --- */
+.sponsors-flex {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sponsor-logo img {
+    max-height: 200px; /* Augmente la taille pour que ce soit bien visible */
+    width: auto;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: var(--transition-smooth);
+}
+
+.sponsor-logo img:hover {
+    opacity: 1;
+    transform: scale(1.05); /* Petit effet de zoom élégant au survol */
+}
+
+.sponsor-logo img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+.main-footer {
+    background: var(--bg-secondary);
+    padding: 4rem 0 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* Bouton Retour en haut */
+#scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--accent-color);
+    color: #0b0f19;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-smooth);
+    z-index: 999;
+}
+
+#scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE MEDIA QUERIES (Mobile First / Adaptation)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 80%;
+        height: calc(100vh - 70px);
+        background: var(--bg-primary);
+        flex-direction: column;
+        padding: 3rem;
+        transition: var(--transition-smooth);
+        border-left: 1px solid var(--border-color);
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .why-flex {
+        flex-direction: column;
+    }
+    
+    .hero-subtitle {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+/* ==========================================
+   SECTION SPONSORS (OR, ARGENT, BRONZE)
+   ========================================== */
+.sponsors-section {
+    padding: 80px 0;
+    background-color: var(--bg-secondary);
+    text-align: center;
+}
+
+.sponsors-tier {
+    margin-bottom: 60px;
+}
+
+.sponsors-tier h3 {
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Petit trait décoratif sous le titre de chaque niveau */
+.sponsors-tier h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--brand-primary), transparent);
+}
+
+/* Grille flexible pour aligner les logos proprement */
+.sponsors-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Style de base d'un conteneur de logo */
+.sponsor-card {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-smooth);
+    padding: 20px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.sponsor-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: var(--transition-smooth);
+}
+
+/* On applique l'opacité légère de base pour un effet homogène */
+.sponsor-card {
+    opacity: 0.85;
+}
+
+.sponsor-card:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+    border-color: var(--brand-primary);
+    box-shadow: 0 8px 25px rgba(85, 226, 196, 0.15);
+}
+
+/* Au survol, le logo retrouve ses vraies couleurs d'origine */
+.sponsor-card:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* ==========================================
+   🎯 DIFFÉRENCIATION VISUELLE DES TAILLES
+   ========================================== */
+
+/* 1. Niveau Or : Très grands et imposants */
+.tier-gold .sponsor-card {
+    width: 260px;
+    height: 130px;
+}
+
+/* 2. Niveau Argent : Taille moyenne standard */
+.tier-silver .sponsor-card {
+    width: 200px;
+    height: 100px;
+}
+
+/* 3. Niveau Bronze : Plus discrets et compacts */
+.tier-bronze .sponsor-card {
+    width: 160px;
+    height: 80px;
+}
+
+/* Responsive mobile : on réduit les tailles pour que ça tienne sur les petits écrans */
+@media (max-width: 768px) {
+    .sponsors-grid {
+        gap: 20px;
+    }
+    .tier-gold .sponsor-card { width: 180px; height: 100px; }
+    .tier-silver .sponsor-card { width: 150px; height: 80px; }
+    .tier-bronze .sponsor-card { width: 120px; height: 65px; }
+}
