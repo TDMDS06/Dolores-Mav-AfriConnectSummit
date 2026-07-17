@@ -82,3 +82,52 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.innerHTML = isOpened ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
     });
 });
+// =======================================================
+// ANIMATION DES COMPTEURS AU SCROLL (INTERSECTION OBSERVER)
+// =======================================================
+
+const animateCounters = () => {
+    const stats = document.querySelectorAll('.stat-number');
+    
+    stats.forEach(stat => {
+        const updateCount = () => {
+            const target = +stat.getAttribute('data-target'); // On récupère la valeur cible (+1200, 48, etc.)
+            const count = +stat.innerText; // On récupère la valeur actuelle (commence à 0)
+            
+            // On calcule la vitesse de l'incrémentation
+            const speed = target / 80; // Divise pour avoir une animation fluide en environ 1.5s
+            
+            if (count < target) {
+                // On ajoute la fraction et on arrondit à l'entier supérieur
+                stat.innerText = Math.ceil(count + speed);
+                setTimeout(updateCount, 20); // Relance toutes les 20ms
+            } else {
+                // Une fois la cible atteinte, on affiche le chiffre propre (avec un "+" pour le 1200)
+                stat.innerText = target === 1200 ? `+${target}` : target;
+            }
+        };
+        
+        updateCount();
+    });
+};
+
+// Configuration de l'Intersection Observer
+const statsSection = document.querySelector('.stats-section');
+
+if (statsSection) {
+    const observerOptions = {
+        root: null, // Surveille par rapport à la fenêtre du navigateur (Viewport)
+        threshold: 0.3 // L'animation démarre quand 30% de la section est visible à l'écran
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters(); // On lance l'animation
+                observer.unobserve(entry.target); // On arrête de surveiller pour ne la lancer qu'une seule fois
+            }
+        });
+    }, observerOptions);
+
+    observer.observe(statsSection);
+}
