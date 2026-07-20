@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programme - AfriConnect Summit</title>
+
+    <!-- Google Fonts (à inclure sur TOUTES les pages) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tes fichiers CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar-header">
+        <nav class="container navbar">
+            <a href="index.html" class="logo">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40 20 C45 15, 55 12, 65 15 C75 18, 82 25, 85 35 C88 45, 82 55, 78 60 C74 65, 70 75, 65 85 C60 90, 50 92, 45 85 C40 78, 30 75, 25 70 C18 65, 12 55, 15 45 C18 35, 30 25, 40 20 Z" stroke="#55E2C4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="45" cy="25" r="3" fill="#55E2C4"/>
+                    <circle cx="65" cy="30" r="3" fill="#55E2C4"/>
+                    <circle cx="75" cy="45" r="3" fill="#55E2C4"/>
+                    <circle cx="60" cy="60" r="3" fill="#55E2C4"/>
+                    <circle cx="48" cy="75" r="3" fill="#55E2C4"/>
+                    <circle cx="30" cy="55" r="3" fill="#55E2C4"/>
+                    <path d="M45 25 L65 30 M65 30 L75 45 M75 45 L60 60 M60 60 L48 75 M48 75 L30 55 M30 55 L45 25 M45 25 L60 60 M65 30 L30 55" stroke="#55E2C4" stroke-width="1" stroke-dasharray="3 3"/>
+                </svg>
+                <div style="display: flex; flex-direction: column; margin-left: 10px;">
+                    <span style="font-family: var(--font-title); font-size: 1.4rem; font-weight: 800; color: var(--text-primary); line-height: 1.1;">
+                        AfriConnect<span style="color: var(--brand-primary);">Summit</span>
+                    </span>
+                    <span style="font-size: 0.65rem; color: var(--text-muted); font-weight: 500; white-space: nowrap;">
+                        Bâtir les ponts numériques de l'Afrique
+                    </span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="programme.html" class="active">Programme</a></li>
+                <li><a href="index.html#intervenants">Intervenants</a></li>
+                <li><a href="index.html#inscription">Inscription</a></li>
+            </ul>
+
+            <button id="theme-toggle" class="theme-btn" aria-label="Changer de thème">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- HERO INTERNE SANS FOND SOMBRE LOURD -->
+        <section class="page-header">
+            <div class="container">
+               
+                <h1 class="page-title">Programme du Sommet</h1>
+                <p class="page-subtitle">3 jours de conférences, ateliers et opportunités de networking</p>
+            </div>
+        </section>
+
+        <div class="container main-section">
+            
+            <!-- ONGLETS 3 JOURS -->
+            <div class="tabs-container">
+                <button class="tab-btn active" data-tab="jour1">
+                    <span class="tab-name">Jour 1</span>
+                    <span class="tab-sub">Mercredi 14 Oct.</span>
+                </button>
+                <button class="tab-btn" data-tab="jour2">
+                    <span class="tab-name">Jour 2</span>
+                    <span class="tab-sub">Jeudi 15 Oct.</span>
+                </button>
+                <button class="tab-btn" data-tab="jour3">
+                    <span class="tab-name">Jour 3</span>
+                    <span class="tab-sub">Vendredi 16 Oct.</span>
+                </button>
+            </div>
+
+            <!-- TABLEAUX DE PLANNING -->
+            <div class="tabs-content">
+                
+                <!-- JOUR 1 -->
+                <div id="jour1" class="tab-pane active">
+                    <table class="program-table">
+                        <thead>
+                            <tr>
+                                <th>Heure</th>
+                                <th>Session</th>
+                                <th>Intervenant</th>
+                                <th>Salle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="time-col">08:30 - 09:30</td>
+                                <td><strong>Accueil & Enregistrement</strong><br><small>Remise des badges et café de bienvenue</small></td>
+                                <td>—</td>
+                                <td>Hall Principal</td>
+                            </tr>
+                            <tr>
+                                <td class="time-col">09:30 - 11:00</td>
+                                <td><strong>Keynote d'ouverture :</strong> Cybersécurité et Souveraineté Numérique</td>
+                                <td>Panel d'experts ministériels</td>
+                                <td>Amphi Kéba Mbaye</td>
+                            </tr>
+                            <tr>
+                                <td class="time-col">11:00 - 12:30</td>
+                                <td><strong>Table ronde :</strong> Protections des Infrastructures Critiques</td>
+                                <td>Dr. Amadou Diallo (Tech Africa)</td>
+                                <td>Salle Innovation</td>
+                            </tr>
+                            <tr>
+                                <td class="time-col">12:30 - 14:00</td>
+                                <td><strong>Pause Déjeuner & Networking</strong></td>
+                                <td>—</td>
+                                <td>Espace Teranga</td>
+                            </tr>
+                            <tr>
+                                <td class="time-col">14:00 - 16:00</td>
+                                <td><strong>Atelier :</strong> Réglementation et Protection des Données</td>
+                                <td>Mme Aminata Fall (Juriste Tech)</td>
+                                <td>Salle B</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- JOUR 2 -->
+                <div id="jour2" class="tab-pane">
+                    <table class="program-table">
+                        <thead>
+                            <tr>
+                                <th>Heure</th>
+                                <th>Session</th>
+                                <th>Intervenant</th>
+                                <th>Salle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="time-col">09:00 - 10:30</td>
+                                <td><strong>Atelier :</strong> Pen-Testing et Hacking Éthique Pratique</td>
+                                <td>Équipe CyberSec Academy</td>
+                                <td>Labo Réseaux</td>
+                            </tr>
+                            <tr>
+                                <td class="time-col">10:30 - 12:00</td>
+                                <td><strong>Conférence :</strong> Sécurité des Transactions Mobile Money</td>
+                                <td>M. Ousmane Diop (FinTech Sec)</td>
+                                <td>Salle Innovation</td>
+                            </tr>
+                            <tr>
+                                <td class="time-col">12:00 - 13:30</td>
+                                <td><strong>Pause Déjeuner</strong></td>
+                                <td>—</td>
+                                <td>Espace Teranga</td>
+                            </tr>
+                            <tr>
+                                <td class="time-col">13:30 - 15:00</td>
+                                <td><strong>Keynote :</strong> Intelligence Artificielle et Détection de Menaces</td>
+                                <td>Ingénieurs Cloud Partner</td>
+                                <td>Amphi Kéba Mbaye</td>
+                            </tr>
+                            <tr>
+                                <td class="time-col">15:00 - 16:30</td>
+                                <td><strong>Masterclass :</strong> Cloud Sécurisé pour PME</td>
+                                <td>Experts Microsoft Africa</td>
+                                <td>Salle B</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- JOUR 3 -->
+                <div id="jour3" class="tab-pane">
+                    <table class="program-table">
+                        <thead>
+                            <tr>
+                                <th>Heure</th>
+                                <th>Session</th>
+                                <th>Intervenant</th>
+                                <th>Salle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="time-col">09:30 - 11:00</td>
+                                <td><strong>Hackathon :</strong> Pitches des Projets Innovants</td>
+                                <td>Startups Sélectionnées</td>
+                                <td>Zone Tech Hub</td>
+                            </tr>
+                            <tr>
+                                <td class="time-col">11:00 - 12:30</td>
+                                <td><strong>Conférence :</strong> Lutte contre les Rançongiciels (Ransomwares)</td>
+                                <td>Équipe CERT Nationale</td>
+                                <td>Salle Innovation</td>
+                            </tr>
+                            <tr>
+                                <td class="time-col">12:30 - 14:00</td>
+                                <td><strong>Pause Déjeuner</strong></td>
+                                <td>—</td>
+                                <td>Espace Teranga</td>
+                            </tr>
+                            <tr>
+                                <td class="time-col">14:00 - 15:30</td>
+                                <td><strong>Finale :</strong> Délibération et Remise des Prix</td>
+                                <td>Membres du Jury</td>
+                                <td>Zone Tech Hub</td>
+                            </tr>
+                            <tr>
+                                <td class="time-col">15:30 - 17:00</td>
+                                <td><strong>Cérémonie Officielle de Clôture</strong></td>
+                                <td>Comité AfriConnect</td>
+                                <td>Amphi Kéba Mbaye</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- SECTION THÉMATIQUES 2x2 -->
+            <section class="themes-section scroll-animate">
+                <h2 class="section-title">Les 4 Thématiques Majeures</h2>
+                <div class="themes-grid">
+                    <div class="theme-card">
+                        <div class="theme-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Cybersécurité</h3>
+                        <p>Analyse des menaces, cryptographie et protection des infrastructures critiques.</p>
+                    </div>
+                    <div class="theme-card">
+                        <div class="theme-icon"><i class="fas fa-cloud"></i></div>
+                        <h3>Cloud & Souveraineté</h3>
+                        <p>Hébergement local et solutions Cloud indépendantes pour les entreprises africaines.</p>
+                    </div>
+                    <div class="theme-card">
+                        <div class="theme-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>FinTech & Mobile Money</h3>
+                        <p>Sécurisation des paiements mobiles et prévention des fraudes bancaires.</p>
+                    </div>
+                    <div class="theme-card">
+                        <div class="theme-icon"><i class="fas fa-brain"></i></div>
+                        <h3>IA & Détection</h3>
+                        <p>Machine Learning appliqué à la détection automatique des cyberattaques.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER COMPLET -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>AfriConnect<span>Summit</span></h3>
+                <p>Le rendez-vous incontournable de la tech et de la cybersécurité en Afrique.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="index.html#intervenants">Intervenants</a></li>
+                    <li><a href="index.html#inscription">Inscription</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Suivez-nous</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 AfriConnect Summit. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- BOUTON RETOUR EN HAUT -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

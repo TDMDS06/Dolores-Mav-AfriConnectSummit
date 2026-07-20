@@ -42,32 +42,35 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // --- 3. COMPTE À REBOURS TEXTUEL DYNAMIQUE ---
-    // Date cible fixée au 15 Octobre 2026 à 09:00:00 (Lancement du Sommet)
-    const countdownDate = new Date('October 15, 2026 09:00:00').getTime();
+   // --- COMPTE À REBOURS (COUNTDOWN) ---
+function startCountdown() {
+    // FIXE LA DATE CIBLE ICI (ex: 15 Octobre 2026 à 09:00:00)
+    const targetDate = new Date("October 15, 2026 09:00:00").getTime();
 
-    const countdownTimer = setInterval(() => {
+    const timer = setInterval(() => {
         const now = new Date().getTime();
-        const distance = countdownDate - now;
+        const distance = targetDate - now;
 
-        // Calcul du temps pour les Jours, Heures, Minutes, Secondes
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // Si la date n'est pas encore passée
+        if (distance > 0) {
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Sélection et injection dans les nœuds HTML correspondants
-        document.getElementById('days').innerText = String(days).padStart(2, '0');
-        document.getElementById('hours').innerText = String(hours).padStart(2, '0');
-        document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
-        document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
-
-        // Si la date est dépassée, arrêter le compte à rebours
-        if (distance < 0) {
-            clearInterval(countdownTimer);
-            document.querySelector('.countdown-container').innerHTML = "<p>Le sommet a commencé !</p>";
+            // Mettre à jour dans le HTML (ajoute un '0' devant si < 10)
+            if (document.getElementById("days")) document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            if (document.getElementById("hours")) document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            if (document.getElementById("minutes")) document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            if (document.getElementById("seconds")) document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        } else {
+            clearInterval(timer);
         }
     }, 1000);
+}
+
+// Lancer le compte à rebours au chargement
+document.addEventListener("DOMContentLoaded", startCountdown);
 
     // --- 4. MISE À JOUR AUTOMATIQUE DE L'ANNÉE DU FOOTER ---
     document.getElementById('footer-year').textContent = new Date().getFullYear();
@@ -131,3 +134,67 @@ if (statsSection) {
 
     observer.observe(statsSection);
 }
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- GESTION DES ONGLETS (PROGRAMME) ---
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    if (tabButtons.length > 0) {
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // 1. Retirer la classe active de tous les boutons
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // 2. Retirer la classe active de tous les contenus (panes)
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                // 3. Activer le bouton cliqué
+                button.classList.add('active');
+
+                // 4. Récupérer l'ID cible (ex: "jour2")
+                const targetTabId = button.getAttribute('data-tab');
+                const targetPane = document.getElementById(targetTabId);
+
+                // 5. Activer le contenu correspondant
+                if (targetPane) {
+                    targetPane.classList.add('active');
+                }
+            });
+        });
+    }
+
+});
+document.addEventListener('DOMContentLoaded', () => {
+    // Target date : 15 Octobre 2026 à 09:00:00
+    const targetDate = new Date("2026-10-15T09:00:00").getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        if (distance <= 0) {
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Recherche par ID ou par classe CSS (sécurité)
+        const daysEl = document.getElementById('days') || document.querySelector('.days-val');
+        const hoursEl = document.getElementById('hours') || document.querySelector('.hours-val');
+        const minutesEl = document.getElementById('minutes') || document.querySelector('.minutes-val');
+        const secondsEl = document.getElementById('seconds') || document.querySelector('.seconds-val');
+
+        if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+        if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+        if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+        if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+    }
+
+    // Exécution immédiate puis toutes les secondes
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+});

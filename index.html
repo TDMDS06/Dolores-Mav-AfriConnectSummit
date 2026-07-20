@@ -14,92 +14,40 @@
 </head>
 <body>
 
-    <header class="navbar-header">
-        <div class="container navbar">
-          <a href="index.html" class="logo" style="height: 45px; display: flex; align-items: center; text-decoration: none;">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120" style="height: 100%; width: auto;">
-    <defs>
-      <linearGradient id="afriGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#8090ff" />
-        <stop offset="50%" stop-color="#63b5e5" />
-        <stop offset="100%" stop-color="#55e2c4" />
-      </linearGradient>
-      
-      <style>
-        .logo-text-main { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 26px; fill: #0b0f19; }
-        .logo-text-sub { font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 26px; fill: #63b5e5; }
-        .logo-tagline { font-family: 'Inter', sans-serif; font-size: 10px; fill: #67748e; letter-spacing: 0.5px; }
-        .network-node { fill: #55e2c4; }
-        .network-line { stroke: url(#afriGrad); stroke-width: 1; stroke-opacity: 0.7; }
-        .network-border { stroke: url(#afriGrad); stroke-width: 1.5; fill: none; }
-        
-        /* Version magique : quand la page passe en mode sombre, le texte devient blanc */
-        [data-theme="dark"] .logo-text-main { fill: #ffffff !important; }
-        [data-theme="dark"] .logo-tagline { fill: #a0aec0 !important; }
-      </style>
-    </defs>
+  <header class="navbar-header">
+        <nav class="container navbar">
+            <a href="index.html" class="logo">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40 20 C45 15, 55 12, 65 15 C75 18, 82 25, 85 35 C88 45, 82 55, 78 60 C74 65, 70 75, 65 85 C60 90, 50 92, 45 85 C40 78, 30 75, 25 70 C18 65, 12 55, 15 45 C18 35, 30 25, 40 20 Z" stroke="#55E2C4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="45" cy="25" r="3" fill="#55E2C4"/>
+                    <circle cx="65" cy="30" r="3" fill="#55E2C4"/>
+                    <circle cx="75" cy="45" r="3" fill="#55E2C4"/>
+                    <circle cx="60" cy="60" r="3" fill="#55E2C4"/>
+                    <circle cx="48" cy="75" r="3" fill="#55E2C4"/>
+                    <circle cx="30" cy="55" r="3" fill="#55E2C4"/>
+                    <path d="M45 25 L65 30 M65 30 L75 45 M75 45 L60 60 M60 60 L48 75 M48 75 L30 55 M30 55 L45 25 M45 25 L60 60 M65 30 L30 55" stroke="#55E2C4" stroke-width="1" stroke-dasharray="3 3"/>
+                </svg>
+                <div style="display: flex; flex-direction: column; margin-left: 10px;">
+                    <span style="font-family: var(--font-title); font-size: 1.4rem; font-weight: 800; color: var(--text-primary); line-height: 1.1;">
+                        AfriConnect<span style="color: var(--brand-primary);">Summit</span>
+                    </span>
+                    <span style="font-size: 0.65rem; color: var(--text-muted); font-weight: 500; white-space: nowrap;">
+                        Bâtir les ponts numériques de l'Afrique
+                    </span>
+                </div>
+            </a>
 
-    <g transform="translate(10, 10)">
-      <path class="network-border" d="M 38,5 C 45,5 55,10 65,12 C 75,14 82,22 80,32 C 78,42 68,48 66,54 C 64,60 55,68 52,75 C 49,82 45,92 43,98 C 42,100 39,100 38,95 C 37,90 31,75 28,70 C 25,65 17,62 12,56 C 7,50 3,42 5,35 C 7,28 15,25 20,20 C 25,15 31,5 38,5 Z" />
-      <line class="network-line" x1="38" y1="5" x2="52" y2="20" />
-      <line class="network-line" x1="52" y1="20" x2="65" y2="12" />
-      <line class="network-line" x1="52" y1="20" x2="58" y2="38" />
-      <line class="network-line" x1="65" y1="12" x2="80" y2="32" />
-      <line class="network-line" x1="80" y1="32" x2="58" y2="38" />
-      <line class="network-line" x1="58" y1="38" x2="66" y2="54" />
-      <line class="network-line" x1="58" y1="38" x2="42" y2="45" />
-      <line class="network-line" x1="52" y1="20" x2="42" y2="45" />
-      <line class="network-line" x1="38" y1="5" x2="28" y2="22" />
-      <line class="network-line" x1="28" y1="22" x2="42" y2="45" />
-      <line class="network-line" x1="28" y1="22" x2="20" y2="20" />
-      <line class="network-line" x1="20" y1="20" x2="12" y2="56" />
-      <line class="network-line" x1="42" y1="45" x2="32" y2="58" />
-      <line class="network-line" x1="12" y1="56" x2="32" y2="58" />
-      <line class="network-line" x1="32" y1="58" x2="28" y2="70" />
-      <line class="network-line" x1="32" y1="58" x2="48" y2="65" />
-      <line class="network-line" x1="66" y1="54" x2="48" y2="65" />
-      <line class="network-line" x1="48" y1="65" x2="52" y2="75" />
-      <line class="network-line" x1="48" y1="65" x2="43" y2="98" />
-      <line class="network-line" x1="28" y1="70" x2="43" y2="98" />
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="programme.html">Programme</a></li>
+                <li><a href="index.html#intervenants">Intervenants</a></li>
+                <li><a href="index.html#inscription">Inscription</a></li>
+            </ul>
 
-      <circle class="network-node" cx="38" cy="5" r="3" />
-      <circle class="network-node" cx="65" cy="12" r="3" />
-      <circle class="network-node" cx="52" cy="20" r="3" />
-      <circle class="network-node" cx="80" cy="32" r="3" />
-      <circle class="network-node" cx="28" cy="22" r="3" />
-      <circle class="network-node" cx="20" cy="20" r="3" />
-      <circle class="network-node" cx="42" cy="45" r="3" />
-      <circle class="network-node" cx="58" cy="38" r="3" />
-      <circle class="network-node" cx="66" cy="54" r="3" />
-      <circle class="network-node" cx="12" cy="56" r="3" />
-      <circle class="network-node" cx="32" cy="58" r="3" />
-      <circle class="network-node" cx="48" cy="65" r="3" />
-      <circle class="network-node" cx="28" cy="70" r="3" />
-      <circle class="network-node" cx="52" cy="75" r="3" />
-      <circle class="network-node" cx="43" cy="98" r="3" />
-    </g>
-
-    <text x="110" y="52" class="logo-text-main">AfriConnect<tspan class="logo-text-sub">Summit</tspan></text>
-    <text x="110" y="72" class="logo-tagline">Bâtir les ponts numériques de l'Afrique</text>
-  </svg>
-</a>
-            
-            <nav class="nav-links" aria-label="Navigation principale">
-                <a href="index.html" class="active">Accueil</a>
-                <a href="programme.html">Programme</a>
-                <a href="intervenants.html">Intervenants</a>
-                <a href="contact.html">Inscription</a>
-            </nav>
-            
-            <div class="nav-actions">
-                <button id="theme-toggle" aria-label="Changer de thème">
-                    <i class="fa-solid : checked fa-moon"></i>
-                </button>
-                <button class="hamburger" aria-label="Ouvrir le menu mobile">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-        </div>
+            <button id="theme-toggle" class="theme-btn" aria-label="Changer de thème">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
     </header>
 
     <main>
@@ -258,35 +206,36 @@
         </div>
     </div>
 </section>
-    </main>
 
-    <footer class="main-footer">
+    </main>
+<!-- FOOTER COMPLET -->
+    <footer class="site-footer">
         <div class="container footer-content">
-            <div class="footer-col">
-                <h4>AfriConnect</h4>
-                <p>Bâtir les ponts numériques de l'Afrique de demain.</p>
+            <div class="footer-brand">
+                <h3>AfriConnect<span>Summit</span></h3>
+                <p>Le rendez-vous incontournable de la tech et de la cybersécurité en Afrique.</p>
             </div>
-            <div class="footer-col">
-                <h4>Liens Rapides</h4>
+            <div class="footer-links">
+                <h4>Navigation</h4>
                 <ul>
+                    <li><a href="index.html">Accueil</a></li>
                     <li><a href="programme.html">Programme</a></li>
-                    <li><a href="intervenants.html">Intervenants</a></li>
-                    <li><a href="contact.html">S'inscrire</a></li>
+                    <li><a href="index.html#intervenants">Intervenants</a></li>
+                    <li><a href="index.html#inscription">Inscription</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
+            <div class="footer-social">
                 <h4>Suivez-nous</h4>
-                <div class="social-links">
-                    <a href="#" aria-label="Suivre sur LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#" aria-label="Suivre sur X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; <span id="footer-year"></span> AfriConnect Summit. Tous droits réservés.</p>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 AfriConnect Summit. Tous droits réservés.</p>
         </div>
-        <button id="scroll-top" aria-label="Retourner en haut de la page"><i class="fa-solid fa-arrow-up"></i></button>
-        <script src="js/main.js"></script>
     </footer>
 
 </body>

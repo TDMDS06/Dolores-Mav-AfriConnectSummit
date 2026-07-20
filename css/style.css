@@ -610,3 +610,401 @@ header.scrolled, .navbar-header.scrolled {
     color: var(--text-muted);
     font-weight: 500;
 }
+/* ==========================================
+   PAGE PROGRAMME : ONGLETS ET TABLEAUX
+   ========================================== */
+
+/* Conteneur des boutons d'onglets */
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.tab-btn {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 15px 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: var(--transition-smooth);
+    min-width: 180px;
+}
+
+.tab-btn .tab-title {
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.tab-btn .tab-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+/* Style de l'onglet actif */
+.tab-btn.active, .tab-btn:hover {
+    background-color: var(--brand-primary);
+    border-color: var(--brand-primary);
+}
+
+.tab-btn.active .tab-title, .tab-btn.active .tab-date {
+    color: #ffffff; /* Le texte passe en blanc sur bouton de couleur */
+}
+
+/* Gestion de l'affichage du contenu des onglets */
+.tab-content {
+    display: none; /* Masqué par défaut */
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.tab-content.active {
+    display: block; /* Visible uniquement si actif */
+}
+
+/* 📊 Style des tableaux de planning */
+.program-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.program-table th {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    font-family: var(--font-title);
+    font-weight: 700;
+    text-align: left;
+    padding: 20px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.program-table td {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.program-table tr:last-child td {
+    border-bottom: none;
+}
+
+.program-table tr:hover {
+    background-color: rgba(85, 226, 196, 0.03); /* Léger survol sur la ligne */
+}
+
+.time-col {
+    font-weight: 700;
+    color: var(--brand-primary);
+    white-space: nowrap;
+}
+
+.event-title {
+    font-weight: 500;
+}
+
+/* Animation fluide de transition */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+    .tabs-container { flex-direction: column; }
+    .tab-btn { width: 100%; }
+    .program-table th, .program-table td { padding: 12px; font-size: 0.85rem; }
+}
+/* ==========================================
+   PAGE PROGRAMME - DESIGN HARMONIEUX
+   ========================================== */
+
+.main-content {
+    margin-top: 80px;
+}
+
+.page-header {
+    padding: 40px 0 20px;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumb {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.breadcrumb a {
+    color: var(--brand-primary);
+    text-decoration: none;
+}
+
+.breadcrumb .active {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.page-title {
+    font-family: var(--font-title);
+    font-size: 2.2rem;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.page-subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.main-section {
+    padding: 40px 0 80px;
+}
+
+/* Onglets */
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.tab-btn {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 12px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: var(--transition-smooth);
+    min-width: 150px;
+}
+
+.tab-btn .tab-name {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+}
+
+.tab-btn .tab-sub {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background-color: var(--brand-primary);
+    border-color: var(--brand-primary);
+}
+
+.tab-btn.active .tab-name, 
+.tab-btn.active .tab-sub {
+    color: #0b0f19 !important;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+/* Tableau */
+.program-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px var(--shadow-color);
+}
+
+.program-table th {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    text-align: left;
+    padding: 15px 20px;
+    font-family: var(--font-title);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.program-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.program-table tbody tr:nth-child(even) {
+    background-color: var(--bg-secondary);
+}
+
+.time-col {
+    font-weight: 700;
+    color: var(--brand-primary);
+    white-space: nowrap;
+}
+
+/* Thématiques 2x2 */
+.themes-section {
+    margin-top: 60px;
+}
+
+.themes-section .section-title {
+    text-align: center;
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+}
+
+.themes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.theme-card {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.theme-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--brand-primary);
+}
+
+.theme-icon {
+    font-size: 1.8rem;
+    color: var(--brand-primary);
+    margin-bottom: 12px;
+}
+
+.theme-card h3 {
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.theme-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* FOOTER */
+.site-footer {
+    background-color: #0b0f19;
+    color: #ffffff;
+    padding: 50px 0 20px;
+    margin-top: 60px;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-brand h3 {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-brand h3 span {
+    color: var(--brand-primary);
+}
+
+.footer-brand p {
+    color: #a0aec0;
+    font-size: 0.9rem;
+}
+
+.footer-links h4, .footer-social h4 {
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #a0aec0;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.footer-links a:hover {
+    color: var(--brand-primary);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+}
+
+.social-icons a:hover {
+    background: var(--brand-primary);
+    color: #0b0f19;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    color: #a0aec0;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .themes-grid { grid-template-columns: 1fr; }
+    .footer-content { grid-template-columns: 1fr; gap: 25px; }
+    .tabs-container { flex-direction: column; }
+}
+.page-title {
+    font-family: var(--font-title), 'Space Grotesk', sans-serif !important;
+    font-weight: 700;
+}
