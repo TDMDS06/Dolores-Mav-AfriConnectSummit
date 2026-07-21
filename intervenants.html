@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriConnect Summit 2026 | Accueil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="navbar-header">
+        <nav class="container navbar">
+            <a href="index.html" class="logo">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40 20 C45 15, 55 12, 65 15 C75 18, 82 25, 85 35 C88 45, 82 55, 78 60 C74 65, 70 75, 65 85 C60 90, 50 92, 45 85 C40 78, 30 75, 25 70 C18 65, 12 55, 15 45 C18 35, 30 25, 40 20 Z" stroke="#55E2C4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="45" cy="25" r="3" fill="#55E2C4"/>
+                    <circle cx="65" cy="30" r="3" fill="#55E2C4"/>
+                    <circle cx="75" cy="45" r="3" fill="#55E2C4"/>
+                    <circle cx="60" cy="60" r="3" fill="#55E2C4"/>
+                    <circle cx="48" cy="75" r="3" fill="#55E2C4"/>
+                    <circle cx="30" cy="55" r="3" fill="#55E2C4"/>
+                    <path d="M45 25 L65 30 M65 30 L75 45 M75 45 L60 60 M60 60 L48 75 M48 75 L30 55 M30 55 L45 25 M45 25 L60 60 M65 30 L30 55" stroke="#55E2C4" stroke-width="1" stroke-dasharray="3 3"/>
+                </svg>
+                <div style="display: flex; flex-direction: column; margin-left: 10px;">
+                    <span style="font-family: var(--font-title); font-size: 1.4rem; font-weight: 800; color: var(--text-primary); line-height: 1.1;">
+                        AfriConnect<span style="color: var(--brand-primary);">Summit</span>
+                    </span>
+                    <span style="font-size: 0.65rem; color: var(--text-muted); font-weight: 500; white-space: nowrap;">
+                        Bâtir les ponts numériques de l'Afrique
+                    </span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="programme.html">Programme</a></li>
+                <li><a href="intervenants.html" class="active">Intervenants</a></li>
+                <li><a href="index.html#inscription">Inscription</a></li>
+            </ul>
+
+            <button id="theme-toggle" class="theme-btn" aria-label="Changer de thème">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+    <main class="main-content" style="margin-top: 80px;">
+        <section class="hero-programme">
+            <div class="container text-center">
+               
+                <h1 class="page-title">Nos Intervenants</h1>
+                <p class="page-subtitle">Découvrez les experts qui façonneront l'avenir numérique du continent</p>
+            </div>
+        </section>
+
+        <div class="container main-section">
+            <!-- BOUTONS DE FILTRAGE -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="cybersecurity">Cybersécurité</button>
+                <button class="filter-btn" data-filter="cloud">Cloud & Infrastructure</button>
+                <button class="filter-btn" data-filter="fintech">FinTech</button>
+                <button class="filter-btn" data-filter="ia">Intelligence Artificielle</button>
+            </div>
+
+            <!-- GRILLE DES 9 INTERVENANTS -->
+            <div class="speakers-grid">
+                <!-- 1 -->
+                <div class="speaker-card" data-category="cybersecurity">
+                    <div class="speaker-img">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="speaker-info">
+                        <span class="speaker-badge">Cybersécurité</span>
+                        <h3>Dr. Aminata Diallo</h3>
+                        <p class="speaker-role">Experte en Sécurité Nationale & Pentesting</p>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="speaker-card" data-category="cloud">
+                    <div class="speaker-img">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="speaker-info">
+                        <span class="speaker-badge">Cloud</span>
+                        <h3>M. Ousmane Sow</h3>
+                        <p class="speaker-role">Architecte Solutions Cloud Africa</p>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="speaker-card" data-category="fintech">
+                    <div class="speaker-img">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="speaker-info">
+                        <span class="speaker-badge">FinTech</span>
+                        <h3>Mme Fatou Ndiaye</h3>
+                        <p class="speaker-role">Directrice Innovation Mobile Money</p>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="speaker-card" data-category="ia">
+                    <div class="speaker-img">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="speaker-info">
+                        <span class="speaker-badge">IA</span>
+                        <h3>Dr. Jean-Marc Koffi</h3>
+                        <p class="speaker-role">Chercheur en Machine Learning</p>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="speaker-card" data-category="cybersecurity">
+                    <div class="speaker-img">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="speaker-info">
+                        <span class="speaker-badge">Cybersécurité</span>
+                        <h3>M. Ibrahim Ba</h3>
+                        <p class="speaker-role">Consultant en Cryptographie</p>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="speaker-card" data-category="cloud">
+                    <div class="speaker-img">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="speaker-info">
+                        <span class="speaker-badge">Cloud</span>
+                        <h3>Mme Awa Traoré</h3>
+                        <p class="speaker-role">Ingénieure DevOps & Data Center</p>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="speaker-card" data-category="fintech">
+                    <div class="speaker-img">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="speaker-info">
+                        <span class="speaker-badge">FinTech</span>
+                        <h3>M. Samuel Mensah</h3>
+                        <p class="speaker-role">Fondateur PayTech Solutions</p>
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="speaker-card" data-category="ia">
+                    <div class="speaker-img">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="speaker-info">
+                        <span class="speaker-badge">IA</span>
+                        <h3>Mme Mariam Camara</h3>
+                        <p class="speaker-role">Spécialiste Données & NLP</p>
+                    </div>
+                </div>
+
+                <!-- 9 -->
+                <div class="speaker-card" data-category="cybersecurity">
+                    <div class="speaker-img">
+                        <i class="fas fa-user-ninja"></i>
+                    </div>
+                    <div class="speaker-info">
+                        <span class="speaker-badge">Cybersécurité</span>
+                        <h3>M. Cheikh Kane</h3>
+                        <p class="speaker-role">Analyste Incident Response & CERT</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- FOOTER COMPLET -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>AfriConnect<span>Summit</span></h3>
+                <p>Le rendez-vous incontournable de la tech et de la cybersécurité en Afrique.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="index.html#intervenants">Intervenants</a></li>
+                    <li><a href="index.html#inscription">Inscription</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Suivez-nous</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 AfriConnect Summit. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <!-- BOUTON RETOUR EN HAUT -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>

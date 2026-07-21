@@ -198,3 +198,120 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCountdown();
     setInterval(updateCountdown, 1000);
 });
+// --- FILTRAGE DYNAMIQUE INTERVENANTS ---
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const speakerCards = document.querySelectorAll('.speaker-card');
+
+    if (filterButtons.length > 0 && speakerCards.length > 0) {
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Changer le bouton actif
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                // Filtrer les cartes
+                speakerCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+
+                    if (filterValue === 'all' || category === filterValue) {
+                        card.classList.remove('hide');
+                    } else {
+                        card.classList.add('hide');
+                    }
+                });
+            });
+        });
+    }
+});
+document.addEventListener('DOMContentLoaded', () => {
+
+    // ==========================================
+    // 1. CHANGEMENT DE COULEUR DE LA NAVBAR AU SCROLL
+    // ==========================================
+    const navbar = document.querySelector('.navbar-header');
+    
+    function checkScroll() {
+        if (window.scrollY > 30) {
+            navbar?.classList.add('scrolled');
+        } else {
+            navbar?.classList.remove('scrolled');
+        }
+    }
+
+    window.addEventListener('scroll', checkScroll);
+    checkScroll(); // Vérification initiale
+
+
+    // ==========================================
+    // 2. BOUTON MODE SOMBRE (DARK MODE)
+    // ==========================================
+    const themeBtn = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+
+    // Charger la préférence enregistrée
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+    }
+
+    function updateThemeIcon(theme) {
+        if (!themeBtn) return;
+        const icon = themeBtn.querySelector('i');
+        if (icon) {
+            if (theme === 'dark') {
+                icon.className = 'fas fa-sun';
+            } else {
+                icon.className = 'fas fa-moon';
+            }
+        }
+    }
+
+
+    // ==========================================
+    // 3. FILTRAGE DYNAMIQUE DES INTERVENANTS
+    // ==========================================
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const speakerCards = document.querySelectorAll('.speaker-card');
+
+    if (filterButtons.length > 0 && speakerCards.length > 0) {
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                // Gestion de la classe active sur les boutons
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Récupération de la catégorie du bouton
+                const filterValue = btn.getAttribute('data-filter');
+
+                // Masquer ou afficher les cartes
+                speakerCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+
+                    if (filterValue === 'all' || cardCategory === filterValue) {
+                        card.style.display = 'block';
+                        card.classList.remove('hide');
+                    } else {
+                        card.style.display = 'none';
+                        card.classList.add('hide');
+                    }
+                });
+            });
+        });
+    }
+
+});

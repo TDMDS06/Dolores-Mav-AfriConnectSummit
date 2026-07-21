@@ -1008,3 +1008,109 @@ header.scrolled, .navbar-header.scrolled {
     font-family: var(--font-title), 'Space Grotesk', sans-serif !important;
     font-weight: 700;
 }
+/* --- FILTRAGE INTERVENANTS --- */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--brand-primary, #63b5e5);
+    color: #fff;
+    border-color: var(--brand-primary, #63b5e5);
+}
+
+/* GRILLE RESPONSIVE 3x3 */
+.speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.speaker-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.speaker-card.hide {
+    display: none;
+}
+
+.speaker-card:hover {
+    transform: translateY(-5px);
+}
+
+.speaker-img {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--brand-primary, #63b5e5);
+}
+
+.speaker-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgba(99, 181, 229, 0.15);
+    color: var(--brand-primary, #63b5e5);
+    margin-bottom: 10px;
+}
+
+.speaker-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+}
+
+.speaker-role {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+/* Style par défaut de la navbar */
+.navbar-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Style quand on défile la page */
+.navbar-header.scrolled {
+    background-color: var(--bg-primary, #ffffff);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .navbar-header.scrolled {
+    background-color: #0d1117;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
