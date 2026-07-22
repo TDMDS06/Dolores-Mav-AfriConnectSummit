@@ -1114,3 +1114,187 @@ header.scrolled, .navbar-header.scrolled {
     background-color: #0d1117;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
+/* --- PAGE CONTACT & FAQ --- */
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.contact-form-card, .faq-card {
+    flex: 1 1 450px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.contact-form-card h2, .faq-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+/* FORMULAIRE FLEXBOX */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.form-group .required {
+    color: #e63946;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--brand-primary, #63b5e5);
+    box-shadow: 0 0 0 3px rgba(99, 181, 229, 0.2);
+}
+
+/* ERREURS ET ALERTES VISUELLES */
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+    border-color: #e63946 !important;
+    background-color: rgba(230, 57, 70, 0.04);
+}
+
+.form-group.success input,
+.form-group.success select,
+.form-group.success textarea {
+    border-color: #2a9d8f !important;
+}
+
+.error-msg {
+    display: none;
+    font-size: 0.8rem;
+    color: #e63946;
+    margin-top: 2px;
+}
+
+.form-group.error .error-msg {
+    display: block;
+}
+
+.submit-btn {
+    padding: 14px;
+    background: var(--brand-primary, #63b5e5);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}
+
+.success-alert {
+    display: none;
+    padding: 12px 15px;
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* FAQ PUR CSS (ACCORDÉON SANS JS) */
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-primary);
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.faq-item[open] {
+    border-color: var(--brand-primary, #63b5e5);
+}
+
+.faq-question {
+    padding: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none; /* Cache la flèche HTML par défaut */
+    color: var(--text-primary);
+}
+
+.faq-question::-webkit-details-marker {
+    display: none; /* Cache la flèche sous Chrome/Safari */
+}
+
+.faq-icon {
+    font-size: 0.85rem;
+    transition: transform 0.3s ease;
+    color: var(--brand-primary, #63b5e5);
+}
+
+.faq-item[open] .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 16px 16px 16px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+/* Container de la section Carte */
+.map-container, 
+.map-section iframe {
+    max-width: 800px; /* Limite la largeur au lieu de prendre 100% de l'écran */
+    height: 250px !important; /* Réduit la hauteur de la carte (ex: 250px au lieu de 400px ou 450px) */
+    margin: 0 auto; /* Centre la carte horizontalement */
+    border-radius: 12px; /* Arrondit légèrement les coins */
+    overflow: hidden;
+}
+
+/* Espacement du titre 'Nous localiser' */
+.map-section h2, 
+.location-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriConnect Summit 2026 | Accueil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="navbar-header">
+        <nav class="container navbar">
+            <a href="index.html" class="logo">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40 20 C45 15, 55 12, 65 15 C75 18, 82 25, 85 35 C88 45, 82 55, 78 60 C74 65, 70 75, 65 85 C60 90, 50 92, 45 85 C40 78, 30 75, 25 70 C18 65, 12 55, 15 45 C18 35, 30 25, 40 20 Z" stroke="#55E2C4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="45" cy="25" r="3" fill="#55E2C4"/>
+                    <circle cx="65" cy="30" r="3" fill="#55E2C4"/>
+                    <circle cx="75" cy="45" r="3" fill="#55E2C4"/>
+                    <circle cx="60" cy="60" r="3" fill="#55E2C4"/>
+                    <circle cx="48" cy="75" r="3" fill="#55E2C4"/>
+                    <circle cx="30" cy="55" r="3" fill="#55E2C4"/>
+                    <path d="M45 25 L65 30 M65 30 L75 45 M75 45 L60 60 M60 60 L48 75 M48 75 L30 55 M30 55 L45 25 M45 25 L60 60 M65 30 L30 55" stroke="#55E2C4" stroke-width="1" stroke-dasharray="3 3"/>
+                </svg>
+                <div style="display: flex; flex-direction: column; margin-left: 10px;">
+                    <span style="font-family: var(--font-title); font-size: 1.4rem; font-weight: 800; color: var(--text-primary); line-height: 1.1;">
+                        AfriConnect<span style="color: var(--brand-primary);">Summit</span>
+                    </span>
+                    <span style="font-size: 0.65rem; color: var(--text-muted); font-weight: 500; white-space: nowrap;">
+                        Bâtir les ponts numériques de l'Afrique
+                    </span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="programme.html">Programme</a></li>
+    <li><a href="intervenants.html">Intervenants</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+</ul>
+
+            <button id="theme-toggle" class="theme-btn" aria-label="Changer de thème">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="main-content" style="margin-top: 80px;">
+        <section class="hero-programme">
+            <div class="container text-center">
+                <nav class="breadcrumb">
+                    <a href="index.html">Accueil</a> 
+                    <i class="fas fa-chevron-right"></i> 
+                    <span class="active">Contact & FAQ</span>
+                </nav>
+                <h1 class="page-title">Contactez-nous</h1>
+                <p class="page-subtitle">Une question sur le sommet ? Notre équipe vous répond sous 24h.</p>
+            </div>
+        </section>
+
+        <section class="container main-section">
+            <div class="contact-wrapper">
+                
+                <div class="contact-form-card">
+                    <h2>Envoyer un message</h2>
+                    
+                    <form id="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="nom">Nom complet <span class="required">*</span></label>
+                            <input type="text" id="nom" name="nom" placeholder="Ex: Fatou Sow">
+                            <span class="error-msg" id="error-nom">Veuillez entrer au moins 2 caractères.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Adresse E-mail <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="Ex: fatou.sow@example.com">
+                            <span class="error-msg" id="error-email">Veuillez entrer une adresse e-mail valide.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telephone">Téléphone <span class="required">*</span></label>
+                            <input type="tel" id="telephone" name="telephone" placeholder="Ex: +221 77 123 45 67">
+                            <span class="error-msg" id="error-telephone">Numéro invalide (ex: +221 77 123 45 67).</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sujet">Sujet <span class="required">*</span></label>
+                            <select id="sujet" name="sujet">
+                                <option value="">-- Sélectionnez un sujet --</option>
+                                <option value="information">Demande d'information</option>
+                                <option value="partenariat">Partenariat & Sponsoring</option>
+                                <option value="presse">Presse & Médias</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                            <span class="error-msg" id="error-sujet">Veuillez choisir un sujet.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="5" placeholder="Votre message..."></textarea>
+                            <span class="error-msg" id="error-message">Votre message doit faire au moins 10 caractères.</span>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Envoyer le message
+                        </button>
+                        
+                        <div id="form-success" class="success-alert">
+                            <i class="fas fa-check-circle"></i> Votre message a été envoyé avec succès !
+                        </div>
+                    </form>
+                </div>
+
+                <div class="faq-card">
+                    <h2>Foire Aux Questions (FAQ)</h2>
+                    
+                    <div class="faq-accordion">
+                        <details class="faq-item">
+                            <summary class="faq-question">
+                                <span>Quand et où aura lieu l'AfriConnect Summit ?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </summary>
+                            <div class="faq-answer">
+                                <p>Le sommet se tiendra du 14 au 16 octobre 2026 à Dakar, Sénégal, au Centre de Conférences de la Place du Souvenir.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary class="faq-question">
+                                <span>Comment obtenir son pass d'accès ?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </summary>
+                            <div class="faq-answer">
+                                <p>Vous pouvez réserver votre billet en ligne dans la section "Inscription". Un pass QR Code vous sera envoyé par e-mail.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary class="faq-question">
+                                <span>Les conférences seront-elles diffusées en ligne ?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </summary>
+                            <div class="faq-answer">
+                                <p>Oui, l'ensemble des sessions plénières sera retransmis en direct streaming pour les participants inscrits au Pass Virtuel.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary class="faq-question">
+                                <span>Comment devenir sponsor ou partenaire ?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </summary>
+                            <div class="faq-answer">
+                                <p>Sélectionnez le sujet "Partenariat & Sponsoring" dans notre formulaire de contact et notre équipe commerciale prendra contact avec vous.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                
+       
+
+            </div>
+        </section>
+        <section>
+            <h2>Nous localiser</h2>
+        <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm">
+            <iframe 
+                src="https://maps.google.com/maps?q=14.690917691477004,-17.459252320736045&hl=fr&z=15&output=embed" 
+                style="border:0; width:100%; height:100%;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+        </section>
+    </main>
+
+    <!-- FOOTER COMPLET -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>AfriConnect<span>Summit</span></h3>
+                <p>Le rendez-vous incontournable de la tech et de la cybersécurité en Afrique.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="index.html#intervenants">Intervenants</a></li>
+                    <li><a href="index.html#inscription">Inscription</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Suivez-nous</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 AfriConnect Summit. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

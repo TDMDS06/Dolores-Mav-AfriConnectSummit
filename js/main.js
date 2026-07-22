@@ -315,3 +315,65 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+// --- VALIDATION STRICTE DU FORMULAIRE PAR REGEX ---
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contact-form');
+
+    if (contactForm) {
+        const nomInput = document.getElementById('nom');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('telephone');
+        const sujetSelect = document.getElementById('sujet');
+        const messageInput = document.getElementById('message');
+        const successAlert = document.getElementById('form-success');
+
+        // Expressions Régulières (Regex)
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const phoneRegex = /^(?:\+|\d)[\d\s\-\(\)]{7,18}\d$/;
+
+        function validateField(input, isFormatValid) {
+            const formGroup = input.parentElement;
+            if (isFormatValid) {
+                formGroup.classList.remove('error');
+                formGroup.classList.add('success');
+                return true;
+            } else {
+                formGroup.classList.remove('success');
+                formGroup.classList.add('error');
+                return false;
+            }
+        }
+
+        // Écouteurs en temps réel (input)
+        nomInput?.addEventListener('input', () => validateField(nomInput, nomInput.value.trim().length >= 2));
+        emailInput?.addEventListener('input', () => validateField(emailInput, emailRegex.test(emailInput.value.trim())));
+        phoneInput?.addEventListener('input', () => validateField(phoneInput, phoneRegex.test(phoneInput.value.trim())));
+        sujetSelect?.addEventListener('change', () => validateField(sujetSelect, sujetSelect.value !== ""));
+        messageInput?.addEventListener('input', () => validateField(messageInput, messageInput.value.trim().length >= 10));
+
+        // Soumission du formulaire
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const isNomValid = validateField(nomInput, nomInput.value.trim().length >= 2);
+            const isEmailValid = validateField(emailInput, emailRegex.test(emailInput.value.trim()));
+            const isPhoneValid = validateField(phoneInput, phoneRegex.test(phoneInput.value.trim()));
+            const isSujetValid = validateField(sujetSelect, sujetSelect.value !== "");
+            const isMessageValid = validateField(messageInput, messageInput.value.trim().length >= 10);
+
+            if (isNomValid && isEmailValid && isPhoneValid && isSujetValid && isMessageValid) {
+                if (successAlert) {
+                    successAlert.style.display = 'block';
+                }
+                contactForm.reset();
+                
+                // Réinitialiser les styles visuels de succès après envoi
+                document.querySelectorAll('.form-group').forEach(group => group.classList.remove('success'));
+
+                setTimeout(() => {
+                    if (successAlert) successAlert.style.display = 'none';
+                }, 5000);
+            }
+        });
+    }
+});
