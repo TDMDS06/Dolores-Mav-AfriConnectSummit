@@ -107,16 +107,53 @@
             </div>
         </section>
 
-        <section class="featured-section section-padding">
-            <div class="container">
-                <h2 class="section-title">Intervenants Vedettes</h2>
-                <div class="speakers-grid-featured">
-                    </div>
-                <div class="center-btn">
-                    <a href="intervenants.html" class="btn btn-secondary">Voir tous les intervenants</a>
-                </div>
+        
+         <section class="container" style="padding: 50px 0;">
+    <div class="text-center" style="margin-bottom: 30px;">
+        <h2>Intervenants Vedettes</h2>
+        <p>Découvrez les experts influents du continent africain.</p>
+    </div>
+
+    <!-- Grille des Intervenants Vedettes -->
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        
+        <!-- Carte 1 -->
+        <div class="speaker-card" style="flex: 1 1 280px; max-width: 320px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; text-align: center;">
+            <div class="speaker-img" style="width: 100px; height: 100px; margin: 0 auto 15px; border-radius: 50%; overflow: hidden; border: 3px solid #63b5e5;">
+                <img src="images/femme1.jpg" alt="Dr. Aminata Diallo" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
-        </section>
+            <span style="color: #63b5e5; font-weight: 600; font-size: 0.9rem;">Cybersécurité</span>
+            <h3 style="margin: 10px 0 5px;">Dr. Aminata Diallo</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Experte en Sécurité Nationale & Pentesting</p>
+        </div>
+
+        <!-- Carte 2 -->
+        <div class="speaker-card" style="flex: 1 1 280px; max-width: 320px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; text-align: center;">
+            <div class="speaker-img" style="width: 100px; height: 100px; margin: 0 auto 15px; border-radius: 50%; overflow: hidden; border: 3px solid #63b5e5;">
+                <img src="images/homme1.jpg" alt="M. Ousmane Sow" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <span style="color: #63b5e5; font-weight: 600; font-size: 0.9rem;">Cloud & Infrastructure</span>
+            <h3 style="margin: 10px 0 5px;">M. Ousmane Sow</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Architecte Solutions Cloud Africa</p>
+        </div>
+
+        <!-- Carte 3 -->
+        <div class="speaker-card" style="flex: 1 1 280px; max-width: 320px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; text-align: center;">
+            <div class="speaker-img" style="width: 100px; height: 100px; margin: 0 auto 15px; border-radius: 50%; overflow: hidden; border: 3px solid #63b5e5;">
+                <img src="images/homme2.jpg" alt="Dr. Jean-Marc Koffi" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <span style="color: #63b5e5; font-weight: 600; font-size: 0.9rem;">Intelligence Artificielle</span>
+            <h3 style="margin: 10px 0 5px;">Dr. Jean-Marc Koffi</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Chercheur en Machine Learning</p>
+        </div>
+
+    </div>
+
+    <!-- Bouton vers la page intervenants -->
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="intervenants.html" class="btn btn-secondary">Voir tous les intervenants</a>
+    </div>
+</section>
 
         <section class="sponsors-section section-padding">
             <div class="container">
@@ -236,7 +273,13 @@
         <div class="footer-bottom text-center">
             <p>&copy; 2026 AfriConnect Summit. Tous droits réservés.</p>
         </div>
+        <button id="backToTop" class="back-to-top" aria-label="Retour en haut">
+    <i class="fas fa-arrow-up"></i>
+</button>
     </footer>
+    <script src="js/main.js"></script>
+    <!-- Bouton Retour en Haut -->
+
 
 </body>
 </html>

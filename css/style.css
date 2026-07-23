@@ -1298,3 +1298,136 @@ header.scrolled, .navbar-header.scrolled {
     font-size: 1.3rem;
     margin-bottom: 15px;
 }
+/* Navbar fixe et changement au scroll */
+.navbar-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-header.scrolled {
+    background-color: var(--bg-primary, #ffffff);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .navbar-header.scrolled {
+    background-color: #0b0f19;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Bouton Retour en Haut */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--brand-primary, #63b5e5);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
+    z-index: 999;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    transform: translateY(-5px);
+}
+/* 1. La grille principale des intervenants */
+.speakers-grid {
+    display: grid !important;
+    /* Force 3 colonnes de taille égale sur grand écran */
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 25px !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 30px auto !important;
+    padding: 0 15px !important;
+    box-sizing: border-box !important;
+}
+
+/* 2. Les cartes d'intervenants */
+.speaker-card {
+    width: 100% !important; /* Remplit sa colonne dans la grille */
+    max-width: none !important; /* Annule toute restriction de largeur fixe */
+    background-color: var(--bg-secondary, #ffffff);
+    border: 1px solid var(--border-color, #e5e7eb);
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: center;
+    box-sizing: border-box !important;
+}
+
+/* 3. Adaptabilité sur mobile et tablette */
+@media (max-width: 992px) {
+    .speakers-grid {
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 colonnes sur tablette */
+    }
+}
+
+@media (max-width: 600px) {
+    .speakers-grid {
+        grid-template-columns: 1fr !important; /* 1 colonne sur smartphone */
+    }
+}
+/* Taille augmentée des photos des intervenants */
+.speaker-img {
+    width: 130px !important;  /* Précédemment 80px ou 100px */
+    height: 130px !important; /* Précédemment 80px ou 100px */
+    margin: 0 auto 18px auto; /* Centre la photo avec un espace en dessous */
+    border-radius: 50%;       /* Conserve la forme circulaire */
+    overflow: hidden;         /* Coupe tout ce qui dépasse du cercle */
+    border: 3px solid var(--brand-primary, #63b5e5); /* Bordure élégante autour de l'image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);       /* Légère ombre portée */
+}
+
+/* Ajustement de l'image à l'intérieur */
+.speaker-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assure que la photo ne soit ni étirée ni déformée */
+}
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--brand-primary, #63b5e5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Masqué par défaut */
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    background-color: #4092c4;
+}
+
+.back-to-top.show {
+    display: flex !important; /* Affiché quand on scroll */
+}

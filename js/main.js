@@ -377,3 +377,144 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- 1. NAVBAR AU SCROLL ---
+    const navbar = document.querySelector('.navbar-header');
+    
+    function handleScroll() {
+        if (window.scrollY > 40) {
+            navbar?.classList.add('scrolled');
+        } else {
+            navbar?.classList.remove('scrolled');
+        }
+
+        // --- 3. BOUTON RETOUR EN HAUT ---
+        if (backToTopBtn) {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Vérification au chargement
+
+
+    // --- 2. BOUTON MODE SOMBRE (DARK MODE) ---
+    const themeBtn = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+
+    // Récupérer la préférence sauvegardée
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', savedTheme);
+    updateIcon(savedTheme);
+
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcon(newTheme);
+        });
+    }
+
+    function updateIcon(theme) {
+        if (!themeBtn) return;
+        const icon = themeBtn.querySelector('i');
+        if (icon) {
+            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+    }
+
+
+    // --- 3. CREATION DU BOUTON RETOUR EN HAUT SI ABSENT ---
+    let backToTopBtn = document.getElementById('back-to-top');
+    
+    if (!backToTopBtn) {
+        backToTopBtn = document.createElement('button');
+        backToTopBtn.id = 'back-to-top';
+        backToTopBtn.setAttribute('aria-label', 'Retour en haut');
+        backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        document.body.appendChild(backToTopBtn);
+    }
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+});
+// Bouton Retour en haut
+const backToTopBtn = document.getElementById('backToTop');
+
+if (backToTopBtn) {
+    // Afficher le bouton quand on descend de 300px
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    // Remonter fluide au clic
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+document.addEventListener('DOMContentLoaded', () => {
+    const themeBtn = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement; // Sélectionne la balise <html>
+
+    if (themeBtn) {
+        // 1. Charger le thème sauvegardé
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            htmlElement.setAttribute('data-theme', savedTheme);
+            updateIcon(themeBtn, savedTheme === 'dark');
+        }
+
+        // 2. Écouteur d'événement au clic
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            // Applique l'attribut [data-theme="dark"]
+            if (newTheme === 'dark') {
+                htmlElement.setAttribute('data-theme', 'dark');
+            } else {
+                htmlElement.removeAttribute('data-theme');
+            }
+
+            // Sauvegarde dans le navigateur
+            localStorage.setItem('theme', newTheme);
+
+            // Change l'icône lune/soleil
+            updateIcon(themeBtn, newTheme === 'dark');
+        });
+    }
+});
+
+// Fonction pour échanger l'icône
+function updateIcon(button, isDark) {
+    const icon = button.querySelector('i');
+    if (icon) {
+        if (isDark) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+    }
+}
